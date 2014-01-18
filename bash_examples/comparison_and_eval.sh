@@ -70,3 +70,21 @@ let x=2 y=2**3 z=y*3; echo $x $y $z
 # [[ expr ]] can also do pattern matching on strings when the = and !=
 # operators are used
 [[ ( "abc" = "abc" ) && ( "abc" != "def" ) ]]; echo $?;
+
+
+### Evaluting expressions using variables and numbers
+TWO=2
+THREE=3
+
+echo $((1+2+1))         #4
+echo $((TWO+3))         #5, no dollar sign to eval variable
+echo $((TWO+$THREE+1))  #6
+echo $(($TWO+THREE+2))  #7
+echo $(($TWO$THREE))    #23, dollar signs to separate variables
+
+echo $((TWO$THREE+1))   #1, since TWO$THREE evaluates to 0
+
+# Bash variables are character strings, but depending on context, 
+# it allows arithmetic operations and comparisons on them.
+echo $(($TWO$THREE+1))          #24
+echo $(( $(($TWO$THREE)) + 1))  #24
