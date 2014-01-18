@@ -15,8 +15,8 @@
 
 #UNARY:
 # not:                      !
-# null string:              -z
-# string not empty:         -n
+# null STRING:              -z
+# STRING not empty:         -n
 # file exists:              -e      -a
 # file is directory:        -d
 # "     " regular file:     -f
