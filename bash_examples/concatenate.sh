@@ -3,8 +3,8 @@
 VAR="value"
 DEFAULT="NoValue"
 
-# concatenate to variable value
-echo $VAR
-echo $VARend    # doesn't work
-echo ${VAR}end  # works!
-echo start${VAR}end   # also works!
+# Note that to concatenate strings using variables, and plain text, you
+# can use $, followed by curly brackets with the variable name in them.
+echo $VARend    # doesn't work, "VARend" is not a variable
+echo ${VAR}end  # works: "valueend"
+echo start${VAR}end   # works: "startvalueend"
