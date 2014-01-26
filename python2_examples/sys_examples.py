@@ -3,7 +3,7 @@
 import sys
 
 #print arguments
-sys.argv[0]
+print(sys.argv[0])
 
 #redirect stdout
 sys.stdout = sys.stderr     # must be something with a write() method
